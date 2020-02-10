@@ -1,0 +1,13 @@
+<p>Parent Component</p>
+
+
+
+<button (click)="isAdmin=true"> Admin Login</button>
+<button (click)="isAdmin=false"> Admin Logout</button>
+
+<input type="text"  [(ngModel)]="userName" name="" id="">
+<app-child #child [empData]="employees" [loggedInUser]="isAdmin" [title]="userName"></app-child>
+
+<p>{{child.welcomeMsg}}</p>
+<p>{{child.sayHello()}}</p>
+
