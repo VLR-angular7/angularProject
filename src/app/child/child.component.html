@@ -1,15 +1,6 @@
 <p>child works!</p>
 <h1>Child Component</h1>
-<!-- 
-<h3 *ngIf="loggedInUser">Admin logged in</h3>
-<h3 *ngIf="!loggedInUser">Other user logged in</h3> -->
 
 
-<h1>{{name}}</h1>
-
-<ul>
-    <li *ngFor="let employee of empData">
-        {{employee.name}}
-    </li>
-</ul>
+<button type="button"  (click)="sendDataToParent()">Counter</button>
 

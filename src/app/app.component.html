@@ -1,13 +1,24 @@
-<p>Parent Component</p>
 
 
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+    </tr>
+    <tr *ngFor="let mobile of mobiles">
+        <td>{{mobile.id}}</td>
+        <td>{{mobile.name}}</td>
+        <td>{{mobile.price}}</td>
+        <td>{{mobile.stock}}</td>
+        <td><app-mobiles [mobileId]="mobile.id" [stock]="mobile.stock" (updateStock)="updateStockStatus($event)"></app-mobiles></td>
 
-<button (click)="isAdmin=true"> Admin Login</button>
-<button (click)="isAdmin=false"> Admin Logout</button>
+    </tr>
+</table>
 
-<input type="text"  [(ngModel)]="userName" name="" id="">
-<app-child #child [empData]="employees" [loggedInUser]="isAdmin" [title]="userName"></app-child>
+<hr>
 
-<p>{{child.welcomeMsg}}</p>
-<p>{{child.sayHello()}}</p>
+<app-child  (messageToparent)="displayMessage($event)"></app-child>
+
 
