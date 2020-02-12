@@ -1,4 +1,16 @@
 
+<!-- 
+<h1 appHighlight>Hello World</h1>
+
+<p appHighlight>Welcome to ANgular classes</p> -->
+
+<input appHighlight type="text" >
+
+<h3 #h3element>Welcome to VLR</h3>
+
+<h1>{{city}}</h1>
+
+<p>{{message}}</p>
 
 <table>
     <tr>
@@ -17,8 +29,11 @@
     </tr>
 </table>
 
+<h3>{{child.city}}</h3>
+<h1>{{child.greet()}}</h1>
+
 <hr>
 
-<app-child  (messageToparent)="displayMessage($event)"></app-child>
+<app-child #child (messageToparent)="displayMessage($event)"></app-child>
 
 

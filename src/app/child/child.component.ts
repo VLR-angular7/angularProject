@@ -9,6 +9,7 @@ export class ChildComponent implements OnInit{
 
   @Output() messageToparent= new EventEmitter();
   counter=0;
+  city:string="HYD";
   constructor(){
 
   }
@@ -16,6 +17,10 @@ export class ChildComponent implements OnInit{
 
   }
 
+
+  greet(){
+    return "HEllo How R U ?"
+  }
   sendDataToParent(){
     this.counter=this.counter +1;
     this.messageToparent.emit(this.counter)

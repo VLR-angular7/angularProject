@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
 import { FormsModule } from '@angular/forms';
 import { MobilesComponent } from './mobiles/mobiles.component';
+import { SamplePipePipe } from './sample-pipe.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 
 
@@ -13,7 +15,9 @@ import { MobilesComponent } from './mobiles/mobiles.component';
   declarations: [
     AppComponent,
     ChildComponent,
-    MobilesComponent
+    MobilesComponent,
+    SamplePipePipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

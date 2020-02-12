@@ -1,21 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+
+import {ChildComponent} from './child/child.component'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit,AfterViewInit {
   title = 'angularProject';
   isAdmin:boolean=false;
   employees:any
   countValue:number
   mobiles=[];
-  name:string
+  name:string;
+  city:string;
+  message:string
   ngOnInit(){
      this.name="List of Mobiles"
   this.mobiles=this.getMobiles();
+  this.myElement.nativeElement.style.color="orange"
+
   }
+
+
+  @ViewChild('h3element',{static:false}) myElement:ElementRef;
+  // @ViewChild(ChildComponent,{static:false}) childData:ChildComponent;
+
+
+ngAfterViewInit(){
+  //this.city=this.childData.city
+   //this.message=this.childData.greet();
+
+  // this.myElement.nativeElement.style.color="orange"
+}
 
 //   displayMessage(count){
 // this.countValue=count;
